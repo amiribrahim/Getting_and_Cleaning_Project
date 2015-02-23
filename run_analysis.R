@@ -30,7 +30,7 @@ gettingProject<-function (){
   trainingSet<- trainingSet[ ,meanMatches|stdMatches]
   
   #add a new column to our data set as the training activity ID and Label.
-  trainingSet$Activity.ID <- trainActivLab[,1]
+  #trainingSet$Activity.ID <- trainActivLab[,1]
   trainingSet$Activity.Name <- trainActivLab[,2]
   trainingSet$Subject <- subjectTrain[,1]
   
@@ -66,12 +66,15 @@ gettingProject<-function (){
   testingSet<- testingSet[ ,meanMatches|stdMatches]
   
   #add a new column to our data set as the training activity ID and Label.
-  testingSet$Activity.ID <- testActivLab[,1]
+  #testingSet$Activity.ID <- testActivLab[,1]
   testingSet$Activity.Name <- testActivLab[,2]
   testingSet$Subject <- subjectTest[,1]
   colnames(testingSet)<-nColNames
   #####################################################################################################################
+  library(plyr)
+  finalDataSet<-rbind(trainingSet,testingSet)
   
-  tidyDataSet<-rbind(trainingSet,testingSet)
-  write.csv(tidyDataSet,"./tidyDataSet.csv")
+  #creating the tidy data set
+  tidyDataSet<-ddply(finalDataSet,.(Subject,Activity.Name),colwise(mean,na.rm = TRUE))
+  write.table(tidyDataSet,"./tidyDataSet.txt",row.name=FALSE)
 }

@@ -13,5 +13,6 @@ this the course project of Getting and Cleaning data course
 * Changed the column names manually to a readable discriptive version and load it from a csv file 
 
 #Second, I read and processed the testing data the same I did with training data.
-#combined the rows of training and testing data, resulting in a tidy data set of 10299 observations of 69 variables. 
+#combined the rows of training and testing data, resulting in the final data set of 10299 observations of 69 variables.
+#As a final step we created a tidy data set with average of each variable for each activity and each subject 
 

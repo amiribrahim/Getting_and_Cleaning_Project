@@ -64,6 +64,5 @@ Mean(FrequencyDomain_Body.Body.Gyroscope.Magnitude)
 Std_Dev(FrequencyDomain_Body.Body.Gyroscope.Magnitude)
 Mean(FrequencyDomain_Body.Body.Gyroscope.Jerk.Magnitude)
 Std_Dev(FrequencyDomain_Body.Body.Gyroscope.Jerk.Magnitude)
-Activity.ID
 Activity.Name
 Subject
